@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slide Show", "Slide Show\Slide Show.csproj", "{767DDD67-4AB9-4832-935E-F04E891453D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{767DDD67-4AB9-4832-935E-F04E891453D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767DDD67-4AB9-4832-935E-F04E891453D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767DDD67-4AB9-4832-935E-F04E891453D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767DDD67-4AB9-4832-935E-F04E891453D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F4E6341-9B2D-4CE3-8C48-1C16D2465114}
+	EndGlobalSection
+EndGlobal
