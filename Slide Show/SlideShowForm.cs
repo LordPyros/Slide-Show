@@ -54,26 +54,55 @@ namespace Slide_Show
 
         private void SlideShowForm_KeyDown(object sender, KeyEventArgs e)
         {
-
-            // Close Slideshow if ESC pressed
-            if (e.KeyCode == Keys.Escape)
+            switch (e.KeyCode)
             {
-                Close();
-            }
-            // Pause Slideshow if SPACE pressed
-            if (e.KeyCode == Keys.Space)
-            {
-                playing = !playing;
-            }
-            // Change to previous image if Left arrow pressed
-            if (e.KeyCode == Keys.Left)
-            {
-                ChangeToPreviousImage();
-            }
-            // Change to next image if Right arrow pressed
-            if (e.KeyCode == Keys.Right)
-            {
-                ChangeToNextImage();
+                // Close Slideshow if ESC pressed
+                case Keys.Escape:
+                    Close();
+                    break;
+                // Pause Slideshow if SPACE pressed
+                case Keys.Space:
+                    playing = !playing;
+                    break;
+                // Change to previous image if Left arrow pressed
+                case Keys.Left:
+                    ChangeToPreviousImage();
+                    break;
+                // Change to next image if Right arrow pressed
+                case Keys.Right:
+                    ChangeToNextImage();
+                    break;
+                // Moves the slideshow along to a desired point
+                case Keys.D0:
+                    AdjustCounter(0);
+                    break;
+                case Keys.D1:
+                    AdjustCounter(1);
+                    break;
+                case Keys.D2:
+                    AdjustCounter(2);
+                    break;
+                case Keys.D3:
+                    AdjustCounter(3);
+                    break;
+                case Keys.D4:
+                    AdjustCounter(4);
+                    break;
+                case Keys.D5:
+                    AdjustCounter(5);
+                    break;
+                case Keys.D6:
+                    AdjustCounter(6);
+                    break;
+                case Keys.D7:
+                    AdjustCounter(7);
+                    break;
+                case Keys.D8:
+                    AdjustCounter(8);
+                    break;
+                case Keys.D9:
+                    AdjustCounter(9);
+                    break;
             }
         }
 
@@ -142,11 +171,30 @@ namespace Slide_Show
         }
         private void ResetTimer()
         {
-            // Reset Timer
+            // Restart Timer with full time remaining
             if (playing)
             {
                 timer1.Stop();
                 timer1.Start();
+            }
+        }
+
+        private void AdjustCounter(int input)
+        {
+            // This allows the user to skip through the image collection
+            // Eg. pressing "9" would display an image 90% through the collection
+            // pressing "2" would display an image 20% through the collection
+            // pressing "0" returns the slideshow to the beginning
+            
+            //check there is 1 or more images or do nothing
+            if (imagesExist)
+            {
+                // set the counter 
+                counter = (images.Count * input) / 10;
+                // display the image
+                pictureBox1.Image = Image.FromFile(images[counter]);
+                // restart the timer
+                ResetTimer();
             }
         }
     }
